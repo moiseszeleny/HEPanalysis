@@ -27,6 +27,16 @@ conventions
 
 ```{toctree}
 :maxdepth: 1
+:caption: Track A: foundations
+
+tutorials/T00_anatomy/T00_anatomy
+tutorials/T01_kinematics/T01_kinematics
+tutorials/T02_rediscover_z/T02_rediscover_z
+tutorials/solutions
+```
+
+```{toctree}
+:maxdepth: 1
 :caption: Reference
 
 api

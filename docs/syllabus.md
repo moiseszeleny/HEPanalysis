@@ -1,8 +1,17 @@
 # Syllabus
 
-Each tutorial is a solved notebook in `docs/tutorials/`. It follows the stack's style: a
-prediction before each step, `MOVE` cells, an `assert` behind every claim, a **Would you trust
-this?** box, and a recap. Judgment exercises come without solutions.
+Each tutorial is a MyST text notebook in `docs/tutorials/Txx_<slug>/`, with exercises the
+reader fills in. Each tutorial has:
+- a paper anchor (one published result it is compared against);
+- per step, a prediction, an exercise checked by a checkpoint with staged hints, and a "read
+  it" discussion;
+- a **Would you trust this?** box;
+- a **find the flaw** question;
+- an **explore** section with widgets (live kernel only);
+- a recap, and judgment exercises without solutions.
+
+If a step is skipped, `check_k.use(...)` falls back to the reference solution, so a notebook
+always runs to the end. ✅ marks the tutorials that are available.
 
 The last column lists what each tutorial waits for upstream (`upstream_gaps`). Track A depends
 on nothing upstream, so it is written first.
@@ -13,9 +22,9 @@ The SM results come first so that every later BSM claim has something to be comp
 
 | id | tutorial | data | blocked by |
 |---|---|---|---|
-| T00 | Anatomy of a search: Lagrangian → UFO → events → objects → selection → likelihood → limit → reinterpretation. What a theorist can and cannot do with public results | — | — |
-| T01 | Kinematics and physics objects: pT, η, invariant mass, missing ET, isolation | ATLAS Open Data | — |
-| T02 | **Rediscover the Z**: the dilepton peak, then MadGraph σ × BR × L × ε against the observed yield. Calibrates trust in the scale, resolution and efficiency | Open Data + MadGraph `sm` | — |
+| [T00](tutorials/T00_anatomy/T00_anatomy.md) ✅ | Anatomy of a search: Lagrangian → UFO → events → objects → selection → likelihood → limit → reinterpretation. What a theorist can and cannot do with public results | — | — |
+| [T01](tutorials/T01_kinematics/T01_kinematics.md) ✅ | Kinematics and physics objects: pT, η, invariant mass, missing ET, isolation | ATLAS Open Data | — |
+| [T02](tutorials/T02_rediscover_z/T02_rediscover_z.md) ✅ | **Rediscover the Z**: the dilepton peak, then MadGraph σ × BR × L × ε against the observed yield. Calibrates trust in the scale, resolution and efficiency | Open Data + MadGraph `sm` | — |
 | T03 | The simulation chain: σ, PDFs, scale uncertainties, K-factors, weights and luminosity | MadGraph `sm` → Pythia8 → Delphes | — |
 | T04 | Backgrounds: Monte Carlo against data-driven estimates (sidebands, ABCD, fake factors) | Open Data | — |
 | T05 | Statistics I, by hand: Poisson likelihood, profile likelihood, CLs, Asimov; then pyhf | toy + Open Data | — |

@@ -9,3 +9,6 @@ docs/_build/
 # MadGraph / probe scratch output (never committed)
 runs/
 docs/_autosummary/
+data/cache/
+docs/jupyter_execute/
+docs/.jupyter_cache/

@@ -29,11 +29,16 @@ dependencies = [
     "iminuit>=2.25",
     "pylhe>=0.9",
     "particle>=0.24",
+    "atlasopenmagic==1.10.1",
+    "fsspec[http]",  # uproot over https (Open Data)
+    "pyarrow",  # awkward <-> parquet for committed derived samples
+    "ipywidgets>=8",
+    "jupytext>=1.16",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest==8.3.5", "pytest-timeout==2.3.1", "nbmake", "nbconvert"]
-docs = ["sphinx>=7", "myst-nb", "furo", "sphinx-copybutton", "sphinx-design"]
+docs = ["sphinx>=7", "myst-nb", "furo", "sphinx-copybutton", "sphinx-design", "jupyter-cache", "ipykernel"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -1,0 +1,72 @@
+{
+  "release": "2025e-13tev-beta",
+  "skim": "2muons",
+  "stamp": {
+    "hepanalysis": "0.0.1",
+    "feynlag": "0.3.0",
+    "feynlag-models": "0.1.0",
+    "feynlag-models_commit": "cb0678a5c5b64628e3a93d256051a44f245f5f22",
+    "python": "3.13.2",
+    "date": "2026-10-22"
+  },
+  "samples": {
+    "data15_periodD": {
+      "url": "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/ODEO_FEB2025_v0_2muons_data15_periodD.2muons.root",
+      "entries": 124935,
+      "fraction_read": 1.0
+    },
+    "700323": {
+      "url": "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/ODEO_FEB2025_v0_2muons_mc_700323.Sh_2211_Zmumu_maxHTpTV2_BFilter.2muons.root",
+      "physics_short": "Sh_2211_Zmumu_maxHTpTV2_BFilter",
+      "entries_in_file": 2302345,
+      "entries_read": 60000,
+      "fraction_read": 0.026060386258358326,
+      "metadata": {
+        "cross_section_pb": 2221.3,
+        "genFiltEff": 0.02439439,
+        "kFactor": 1.0,
+        "sumOfWeights": 12741690203522.818,
+        "nEvents": 4009800,
+        "generator": "Sherpa"
+      }
+    },
+    "700324": {
+      "url": "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/ODEO_FEB2025_v0_2muons_mc_700324.Sh_2211_Zmumu_maxHTpTV2_CFilterBVeto.2muons.root",
+      "physics_short": "Sh_2211_Zmumu_maxHTpTV2_CFilterBVeto",
+      "entries_in_file": 11002620,
+      "entries_read": 60000,
+      "fraction_read": 0.005453246590357569,
+      "metadata": {
+        "cross_section_pb": 2221.3,
+        "genFiltEff": 0.13003,
+        "kFactor": 1.0,
+        "sumOfWeights": 146058373467803.72,
+        "nEvents": 20960000,
+        "generator": "Sherpa"
+      }
+    },
+    "700325": {
+      "url": "https://opendata.cern.ch/eos/opendata/atlas/rucio/opendata/ODEO_FEB2025_v0_2muons_mc_700325.Sh_2211_Zmumu_maxHTpTV2_CVetoBVeto.2muons.root",
+      "physics_short": "Sh_2211_Zmumu_maxHTpTV2_CVetoBVeto",
+      "entries_in_file": 41477255,
+      "entries_read": 60000,
+      "fraction_read": 0.0014465759607283559,
+      "metadata": {
+        "cross_section_pb": 2221.3,
+        "genFiltEff": 0.8463929,
+        "kFactor": 1.0,
+        "sumOfWeights": 1196323720518196.5,
+        "nEvents": 85443000,
+        "generator": "Sherpa"
+      }
+    }
+  },
+  "data15_entries_per_period": {
+    "periodD": 124935,
+    "periodE": 1059622,
+    "periodF": 708741,
+    "periodG": 1690267,
+    "periodH": 587758,
+    "periodJ": 3337824
+  }
+}

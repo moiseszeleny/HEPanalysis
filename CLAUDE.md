@@ -69,18 +69,31 @@ uv run sphinx-build -W docs docs/_build               # docs; must stay warning-
    - The analysis conventions (units, weights, kinematics, statistics) are in
      `docs/conventions.md`.
 
-## Tutorial style (from feynlag-anomalies)
+## Tutorial format (chosen by the user, 2026-10-22)
 
-- Numbered sections whose titles make a claim.
-- A "Before running the next cell" prediction blockquote.
-- `# ---- MOVE k: … ----` cells, and `assert` + `ok()` behind every claim.
-- A **Would you trust this?** box.
-- Judgment exercises without solutions.
-- A closing recap.
-
-Notebooks ship solved, and docs builds never execute them (`nb_execution_mode = "off"`). Expensive
-steps (MadGraph, Delphes) read committed small samples; the generation commands are shown, not
-run, on a docs build.
+- **Files.** Each tutorial is `docs/tutorials/Txx_<slug>/` holding:
+  - `Txx_<slug>.md`: a MyST/jupytext text notebook with no stored outputs;
+  - `txx_solutions.py`: the reference solutions;
+  - `txx_checks.py`: the checkpoints, built only from the solutions or `Cited` values, never
+    from literals.
+- **Shared data.** Shared derived data lives in `docs/tutorials/data/`, with its `prepare_*.py`
+  and `provenance.json`.
+- **Exercises and checkpoints.** The reader writes `def my_x(...): raise NotImplementedError`,
+  then calls `check_k(my_x)` and `x = check_k.use(my_x)` (the reference is the fallback).
+  Checkpoints come from `hepanalysis.checkpoints`.
+- **Every tutorial has:**
+  - a paper anchor, verified on INSPIRE;
+  - prediction blockquotes;
+  - "read it" discussions tagged computed or cited;
+  - a **Would you trust this?** admonition;
+  - a **find the flaw** `choice` checkpoint;
+  - an **Explore** cell with ipywidgets (live kernel only, with a static fallback plot);
+  - a recap, and judgment exercises without solutions.
+- **Execution.** The docs build executes the notebooks (myst-nb `cache` mode, raise on error),
+  so `sphinx-build -W` is the notebook test. `tests/test_tutorial_solutions.py` checks that
+  every reference passes its own checkpoints.
+- **Offline only.** Tutorials read only committed derived samples; the network is used only
+  by `prepare_*.py`.
 
 ## Workflow
 
