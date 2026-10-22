@@ -31,7 +31,8 @@ uv run pytest -q                                      # fast suite (slow is dese
 uv run pytest -q -rxX tests/test_upstream_gaps.py     # what is still waiting upstream
 uv run python -m hepanalysis.ufo_check thdm_type2     # static UFO readiness report (id or path)
 uv run python scripts/probe_mg5.py                    # MadGraph probe → docs/evidence/ufo_probe_<date>.md
-uv run sphinx-build -W docs docs/_build               # docs; must stay warning-free
+uv run sphinx-build -W docs docs/_build               # docs; must stay warning-free (executes tutorials)
+uv run jupyter lab                                    # work on a tutorial: right-click a .md → Open With → Notebook
 ```
 
 - MadGraph lives at `~/.local/mg5dl/MG5_aMC_v3_7_2` (override with `MG5_HOME`). Scratch output

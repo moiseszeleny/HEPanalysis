@@ -37,7 +37,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest==8.3.5", "pytest-timeout==2.3.1", "nbmake", "nbconvert"]
+dev = ["pytest==8.3.5", "pytest-timeout==2.3.1", "nbmake", "nbconvert", "jupyterlab>=4"]
 docs = ["sphinx>=7", "myst-nb", "furo", "sphinx-copybutton", "sphinx-design", "jupyter-cache", "ipykernel"]
 
 [tool.setuptools.packages.find]
