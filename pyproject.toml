@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hepanalysis"
+version = "0.0.1"
+description = "A glass-box library and tutorials for BSM collider searches, written for theorists"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Moises Zeleny", email = "moiseszeleny@gmail.com" }]
+dependencies = [
+    # the feynlag stack: same pins as feynlag-anomalies (see ../CLAUDE.md)
+    "feynlag-models @ git+https://github.com/moiseszeleny/feynlag-models.git@cb0678a5c5b64628e3a93d256051a44f245f5f22",
+    "feynlag==0.3.0",
+    "sympy==1.14.0",
+    "pyyaml==6.0.2",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    # analysis (Track A onward)
+    "uproot>=5",
+    "awkward>=2",
+    "vector>=1.4",
+    "hist>=2.7",
+    "mplhep>=0.3",
+    "pyhf>=0.7",
+    "iminuit>=2.25",
+    "pylhe>=0.9",
+    "particle>=0.24",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.5", "pytest-timeout==2.3.1", "nbmake", "nbconvert"]
+docs = ["sphinx>=7", "myst-nb", "furo", "sphinx-copybutton", "sphinx-design"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: MadGraph or otherwise long-running checks (manual / release only)",
+]
+# the default run skips slow tests; `pytest -m slow` overrides this (the last -m wins)
+addopts = "-m 'not slow'"
+timeout = 1800
