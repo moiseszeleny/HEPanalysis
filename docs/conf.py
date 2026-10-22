@@ -30,7 +30,7 @@ import os
 os.environ["HEPANALYSIS_STATIC"] = "1"  # explore cells draw their static plot (hepanalysis.notebook)
 nb_execution_mode = "cache"
 nb_execution_raise_on_error = True
-nb_execution_cache_path = "_build/.jupyter_cache"
+nb_execution_cache_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_build", ".jupyter_cache")
 nb_execution_timeout = 900
 nb_execution_excludepatterns = ["tutorials/data/*"]
 # stderr from the reader's local environment (e.g. a broken matplotlib style) is not content
